@@ -21,6 +21,8 @@
 		8816D5062492CB0A008019AD /* AbstractMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D5052492CB0A008019AD /* AbstractMode.swift */; };
 		8816D5082492CC4E008019AD /* PlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D5072492CC4E008019AD /* PlayMode.swift */; };
 		8816D50A2492CD7A008019AD /* TitleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D5092492CD7A008019AD /* TitleMode.swift */; };
+		8816D50F24940F25008019AD /* LoadAndUnload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D50D24940ECB008019AD /* LoadAndUnload.swift */; };
+		8816D511249417E0008019AD /* AnimatingSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D510249417E0008019AD /* AnimatingSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		8816D5052492CB0A008019AD /* AbstractMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMode.swift; sourceTree = "<group>"; };
 		8816D5072492CC4E008019AD /* PlayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMode.swift; sourceTree = "<group>"; };
 		8816D5092492CD7A008019AD /* TitleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMode.swift; sourceTree = "<group>"; };
+		8816D50D24940ECB008019AD /* LoadAndUnload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndUnload.swift; sourceTree = "<group>"; };
+		8816D510249417E0008019AD /* AnimatingSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,10 @@
 				8816D5012492BAB2008019AD /* Sprite.swift */,
 				8816D5032492C843008019AD /* ContentLoader.swift */,
 				8816D5052492CB0A008019AD /* AbstractMode.swift */,
+				8816D50D24940ECB008019AD /* LoadAndUnload.swift */,
 				8816D5072492CC4E008019AD /* PlayMode.swift */,
 				8816D5092492CD7A008019AD /* TitleMode.swift */,
+				8816D510249417E0008019AD /* AnimatingSprite.swift */,
 			);
 			path = GameEngine;
 			sourceTree = "<group>";
@@ -172,10 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8816D50F24940F25008019AD /* LoadAndUnload.swift in Sources */,
 				8816D50A2492CD7A008019AD /* TitleMode.swift in Sources */,
 				8816D5022492BAB2008019AD /* Sprite.swift in Sources */,
 				8816D4ED2492A132008019AD /* GameScene.swift in Sources */,
 				8816D4EF2492A132008019AD /* GameViewController.swift in Sources */,
+				8816D511249417E0008019AD /* AnimatingSprite.swift in Sources */,
 				8816D4E72492A132008019AD /* AppDelegate.swift in Sources */,
 				8816D5082492CC4E008019AD /* PlayMode.swift in Sources */,
 				8816D5042492C843008019AD /* ContentLoader.swift in Sources */,

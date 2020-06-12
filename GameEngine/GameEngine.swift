@@ -26,8 +26,9 @@ class GameEngine
         playMode = PlayMode(GameScene: gameScene)
         titleMode = TitleMode(GameScene: gameScene)
         
-        currentMode = playMode //PlayMode as! AbstractMode
-        //currentMode = titleMode
+        currentMode = playMode
+        currentMode.LoadContent()
+        
         
         playMode.SetGameEngine(GameEngine: self)
         titleMode.SetGameEngine(GameEngine: self)
@@ -39,7 +40,7 @@ class GameEngine
     {
         currentMode.Update(delta: delta)
         
-        print(gameScene.children.count)
+        //print(gameScene.children.count)
     }
     
     func Draw()
@@ -64,6 +65,8 @@ class GameEngine
     
     func ChangeMode(modeID : Int)
     {
+        currentMode.UnloadContent()
+        
         if(modeID == ModeID.Title)
         {
             currentMode = titleMode
@@ -72,6 +75,8 @@ class GameEngine
         {
             currentMode = playMode
         }
+        
+        currentMode.LoadContent()
     }
     
 }

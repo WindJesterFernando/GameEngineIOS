@@ -14,18 +14,44 @@ import GameplayKit
 class ContentLoader
 {
     
-    static func GetNewSKSprite(ID : Int) -> SKSpriteNode
+    static func GetNewSKSprite(ID : Int, sprite : Sprite)// -> SKSpriteNode
     {
+        //var spr : Sprite
+        
         if(ID == SpriteID.Blunt)
         {
-            return SKSpriteNode(imageNamed: "TestImage")
+//
+
+            
+            var node : SKSpriteNode
+            node = SKSpriteNode(imageNamed: "TestImage")
+            
+            sprite.SetSpriteNode(sksSpriteNode: node)
+            
+            node.size = CGSize(width: 100, height: 100)
+            
+            sprite.SetSpriteSheet(SpriteSheet: SpriteSheet(texture: SKTexture(imageNamed: "demospritesheet"), rows: 4, columns: 6, spacing: 0, margin: 0))
+            
+            
+            sprite.SetFrame(x: 2, y: 2)
+            
+            var animS : AnimatingSprite
+            animS = sprite as! AnimatingSprite
+            animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 0, FrameY: 2))
+            animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 1, FrameY: 2))
+            animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 2, FrameY: 2))
+            animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 3, FrameY: 2))
+            animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 4, FrameY: 2))
+            animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 5, FrameY: 2))
+            
+            animS.SetupAnimationParams(timeBetweenAnimationFrames: 0.25)
+            
         }
         else if(ID == SpriteID.Korra)
         {
-            return SKSpriteNode(imageNamed: "Korra")
+            sprite.SetSpriteNode(sksSpriteNode: SKSpriteNode(imageNamed: "Korra"))
         }
-        
-        return SKSpriteNode(imageNamed: "TestImage")
+
     }
     
 }

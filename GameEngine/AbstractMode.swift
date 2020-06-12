@@ -11,13 +11,37 @@ import SpriteKit
 import GameplayKit
 
 
-protocol AbstractMode {
+protocol AbstractMode : LoadAndUnload
+{
     func Update(delta : Double)
     func Draw()
     func TouchDown(atPoint : CGPoint)
     func TouchMove(atPoint : CGPoint)
     func TouchUp(atPoint : CGPoint)
+
 }
+
+
+
+
+
+
+
+//extension AbstractMode where Self: PlayMode {
+//
+//    func Update(delta : Double) {
+//        //Open mouth
+//    }
+//
+//}
+//
+//extension AbstractMode where Self: TitleMode {
+//
+//    func Update(delta : Double) {
+//        //Open mouth
+//    }
+//
+//}
 
 
 

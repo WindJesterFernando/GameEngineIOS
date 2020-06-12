@@ -10,15 +10,17 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class TitleMode : AbstractMode
+class TitleMode : LoadAndUnload, AbstractMode
 {
-    var gameScene : GameScene
+    //var gameScene : GameScene
     var gameEngine : GameEngine?
     
+    override
     init(GameScene : GameScene){
         
+        super.init(GameScene : GameScene)
         gameScene = GameScene
-        Sprite(SpriteID: SpriteID.Blunt, GameScene: gameScene)
+        
     }
     
     func SetGameEngine(GameEngine : GameEngine)
@@ -28,7 +30,11 @@ class TitleMode : AbstractMode
     
     func Update(delta : Double)
     {
-        print("title mode")
+        //print("title mode")//)
+        
+        for sprite in sprites {
+            sprite.Update(delta: delta)
+        }
     }
     
     func Draw() {
@@ -45,6 +51,12 @@ class TitleMode : AbstractMode
     
     func TouchUp(atPoint: CGPoint) {
         gameEngine?.ChangeMode(modeID: ModeID.Play)
+    }
+    
+    override func LoadContent() {
+        
+        sprites.append(AnimatingSprite(SpriteID: SpriteID.Blunt, GameScene: gameScene))
+    
     }
     
 

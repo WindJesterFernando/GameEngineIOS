@@ -10,16 +10,19 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class PlayMode : AbstractMode
+class PlayMode : LoadAndUnload, AbstractMode
 {
-    
-    var gameScene : GameScene
+      
+    //var gameScene : GameScene
     var gameEngine : GameEngine?
     
-    init(GameScene : GameScene){
-        gameScene = GameScene
+    override
+    init(GameScene : GameScene)
+    {
+        super.init(GameScene: GameScene)
+        //gameScene = GameScene
         
-        Sprite(SpriteID: SpriteID.Korra, GameScene: gameScene)
+        //Sprite(SpriteID: SpriteID.Korra, GameScene: gameScene)
     }
     
     func SetGameEngine(GameEngine : GameEngine)
@@ -29,9 +32,11 @@ class PlayMode : AbstractMode
     
     func Update(delta : Double)
     {
-        print("play mode")//)
+        //print("play mode")//)
         
-        
+        for sprite in sprites {
+            sprite.Update(delta: delta)
+        }
     }
 
     func Draw() {
@@ -50,6 +55,22 @@ class PlayMode : AbstractMode
         //print("hit")
         gameEngine?.ChangeMode(modeID: ModeID.Title)
     }
+    
+    override func LoadContent() {
+        sprites.append(Sprite(SpriteID: SpriteID.Korra, GameScene: gameScene))
+        //sprites.first?.ChangeFrame()
+    }
+    
+    
+//      func LoadContent() {
+//          sprites.append(Sprite(SpriteID: SpriteID.Blunt, GameScene: gameScene))
+//      }
+//      
+//      func UnloadContent() {
+//          for sprite in sprites {
+//              sprite.RemoveFromGameScene()
+//          }
+//      }
     
 }
 
