@@ -18,7 +18,10 @@ class Sprite
     var gameScene : GameScene
     
     var spriteSheet : SpriteSheet?
-        
+    
+    var speed : CGFloat?
+    
+    var normalizedVelocity : CGPoint?
      
     init(SpriteID: Int, GameScene : GameScene)
     {
@@ -59,10 +62,17 @@ class Sprite
         
     }
     
+    func GetSpeed() -> CGFloat {
+        return speed!
+    }
+    
+    func SetSpeed(Speed : CGFloat){
+        speed = Speed
+    }
+    
     //dogSpriteNode.run(SKAction.repeatForever(SKAction.animate  (with: dogFrames, timePerFrame: 0.075, resize: false, restore: true)))
     
 }
-
 
 
 class SpriteSheet {

@@ -52,7 +52,7 @@ class AnimatingSprite : Sprite
         {
             timeSinceLastAnimationFrameChange = 0;
             
-            print("flipping frame")
+            //print("flipping frame")
             
             if(currentFrame === animationFrames.last)
             {
@@ -60,7 +60,7 @@ class AnimatingSprite : Sprite
                 af = animationFrames.first
                 SetFrame(x: af!.frameX, y: af!.frameY)
                 currentFrame = af
-                print("looped")
+                //print("looped")
             }
             else
             {

@@ -22,7 +22,6 @@ class ContentLoader
         {
 //
 
-            
             var node : SKSpriteNode
             node = SKSpriteNode(imageNamed: "TestImage")
             
@@ -45,6 +44,8 @@ class ContentLoader
             animS.AddFrame(AnimationFrame: AnimationFrame(FrameX: 5, FrameY: 2))
             
             animS.SetupAnimationParams(timeBetweenAnimationFrames: 0.25)
+            
+            animS.SetSpeed(Speed: 150)
             
         }
         else if(ID == SpriteID.Korra)

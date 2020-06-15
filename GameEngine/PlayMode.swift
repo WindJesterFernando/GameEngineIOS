@@ -16,8 +16,9 @@ class PlayMode : LoadAndUnload, AbstractMode
     //var gameScene : GameScene
     var gameEngine : GameEngine?
     
-    override
-    init(GameScene : GameScene)
+    var avatar : Sprite?
+    
+    override init(GameScene : GameScene)
     {
         super.init(GameScene: GameScene)
         //gameScene = GameScene
@@ -45,6 +46,33 @@ class PlayMode : LoadAndUnload, AbstractMode
     
     func TouchDown(atPoint: CGPoint) {
         
+        
+        var distance : CGFloat
+        
+        let x = avatar?.spriteNode?.position.x as! CGFloat
+        let y = avatar?.spriteNode?.position.y as! CGFloat
+        
+        let difX = x - atPoint.x
+        let difY = y - atPoint.y
+        
+        distance = sqrt(difX * difX + difY * difY)
+        
+        //print("d = " , distance)
+        
+        let speed : CGFloat = (avatar?.GetSpeed())!
+            //else { return }
+        //print("s = " , speed)
+        
+        let t : TimeInterval
+        
+        t = TimeInterval(CGFloat(distance) / speed)
+        
+        //print("t = " , t)
+        
+        avatar?.spriteNode?.removeAllActions()
+        avatar?.spriteNode?.run(SKAction.move(to: atPoint, duration: t))
+        
+        avatar?.normalizedVelocity = CGPoint(x: difX / distance, y: difY / distance)
     }
     
     func TouchMove(atPoint: CGPoint) {
@@ -53,11 +81,24 @@ class PlayMode : LoadAndUnload, AbstractMode
     
     func TouchUp(atPoint: CGPoint) {
         //print("hit")
-        gameEngine?.ChangeMode(modeID: ModeID.Title)
+        //gameEngine?.ChangeMode(modeID: ModeID.Title)
     }
     
     override func LoadContent() {
         sprites.append(Sprite(SpriteID: SpriteID.Korra, GameScene: gameScene))
+        
+        avatar = AnimatingSprite(SpriteID: SpriteID.Blunt, GameScene: gameScene)
+        
+        sprites.append(avatar!)
+        
+        
+        //for(
+        
+//        for index in 1...10000
+//        {
+//            sprites.append(Sprite(SpriteID: SpriteID.Korra, GameScene: gameScene))
+//        }
+        
         //sprites.first?.ChangeFrame()
     }
     
