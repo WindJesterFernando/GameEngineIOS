@@ -71,6 +71,9 @@ class PlayMode : LoadAndUnload, AbstractMode
         
         avatar?.spriteNode?.removeAllActions()
         avatar?.spriteNode?.run(SKAction.move(to: atPoint, duration: t))
+        {
+            self.avatar?.normalizedVelocity = nil
+        }
         
         avatar?.normalizedVelocity = CGPoint(x: difX / distance, y: difY / distance)
     }
@@ -87,7 +90,9 @@ class PlayMode : LoadAndUnload, AbstractMode
     override func LoadContent() {
         sprites.append(Sprite(SpriteID: SpriteID.Korra, GameScene: gameScene))
         
-        avatar = AnimatingSprite(SpriteID: SpriteID.Blunt, GameScene: gameScene)
+        avatar = StateAnimatingSprite(SpriteID: SpriteID.Demo, GameScene: gameScene)
+            
+        avatar?.spriteNode?.zPosition = 5
         
         sprites.append(avatar!)
         

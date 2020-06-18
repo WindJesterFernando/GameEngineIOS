@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880C9B5F249959D800940C8F /* StateAnimatingSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880C9B5E249959D800940C8F /* StateAnimatingSprite.swift */; };
 		8816D4E72492A132008019AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D4E62492A132008019AD /* AppDelegate.swift */; };
 		8816D4E92492A132008019AD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8816D4E82492A132008019AD /* GameScene.sks */; };
 		8816D4EB2492A132008019AD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8816D4EA2492A132008019AD /* Actions.sks */; };
@@ -23,9 +24,11 @@
 		8816D50A2492CD7A008019AD /* TitleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D5092492CD7A008019AD /* TitleMode.swift */; };
 		8816D50F24940F25008019AD /* LoadAndUnload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D50D24940ECB008019AD /* LoadAndUnload.swift */; };
 		8816D511249417E0008019AD /* AnimatingSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D510249417E0008019AD /* AnimatingSprite.swift */; };
+		88A7743A249BEEA5003711C9 /* FlipBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A77439249BEEA5003711C9 /* FlipBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		880C9B5E249959D800940C8F /* StateAnimatingSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAnimatingSprite.swift; sourceTree = "<group>"; };
 		8816D4E32492A132008019AD /* GameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8816D4E62492A132008019AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8816D4E82492A132008019AD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		8816D5092492CD7A008019AD /* TitleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMode.swift; sourceTree = "<group>"; };
 		8816D50D24940ECB008019AD /* LoadAndUnload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndUnload.swift; sourceTree = "<group>"; };
 		8816D510249417E0008019AD /* AnimatingSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingSprite.swift; sourceTree = "<group>"; };
+		88A77439249BEEA5003711C9 /* FlipBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,15 @@
 				8816D5002492B9DC008019AD /* Internal */,
 				8816D4FE2492AC30008019AD /* GameEngine.swift */,
 				8816D4EC2492A132008019AD /* GameScene.swift */,
-				8816D5012492BAB2008019AD /* Sprite.swift */,
-				8816D5032492C843008019AD /* ContentLoader.swift */,
 				8816D5052492CB0A008019AD /* AbstractMode.swift */,
 				8816D50D24940ECB008019AD /* LoadAndUnload.swift */,
-				8816D5072492CC4E008019AD /* PlayMode.swift */,
 				8816D5092492CD7A008019AD /* TitleMode.swift */,
+				8816D5072492CC4E008019AD /* PlayMode.swift */,
+				8816D5032492C843008019AD /* ContentLoader.swift */,
+				8816D5012492BAB2008019AD /* Sprite.swift */,
 				8816D510249417E0008019AD /* AnimatingSprite.swift */,
+				880C9B5E249959D800940C8F /* StateAnimatingSprite.swift */,
+				88A77439249BEEA5003711C9 /* FlipBook.swift */,
 			);
 			path = GameEngine;
 			sourceTree = "<group>";
@@ -183,12 +189,14 @@
 				8816D5022492BAB2008019AD /* Sprite.swift in Sources */,
 				8816D4ED2492A132008019AD /* GameScene.swift in Sources */,
 				8816D4EF2492A132008019AD /* GameViewController.swift in Sources */,
+				880C9B5F249959D800940C8F /* StateAnimatingSprite.swift in Sources */,
 				8816D511249417E0008019AD /* AnimatingSprite.swift in Sources */,
 				8816D4E72492A132008019AD /* AppDelegate.swift in Sources */,
 				8816D5082492CC4E008019AD /* PlayMode.swift in Sources */,
 				8816D5042492C843008019AD /* ContentLoader.swift in Sources */,
 				8816D5062492CB0A008019AD /* AbstractMode.swift in Sources */,
 				8816D4FF2492AC30008019AD /* GameEngine.swift in Sources */,
+				88A7743A249BEEA5003711C9 /* FlipBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,12 +16,15 @@ class AnimatingSprite : Sprite
     var timeBetweenAnimationFrames : Double?
     var timeSinceLastAnimationFrameChange : Double?
     var currentFrame : AnimationFrame?
+    var isLooping : Bool
     
     override
     init(SpriteID: Int, GameScene: GameScene)
     {
+        isLooping = true
         super.init(SpriteID: SpriteID, GameScene: GameScene)
-        timeSinceLastAnimationFrameChange = 0;
+        timeSinceLastAnimationFrameChange = 0
+        
     }
     
     func AddFrame(AnimationFrame: AnimationFrame)
@@ -52,15 +55,19 @@ class AnimatingSprite : Sprite
         {
             timeSinceLastAnimationFrameChange = 0;
             
+            
             //print("flipping frame")
             
             if(currentFrame === animationFrames.last)
             {
-                var af : AnimationFrame?
-                af = animationFrames.first
-                SetFrame(x: af!.frameX, y: af!.frameY)
-                currentFrame = af
-                //print("looped")
+                if(isLooping)
+                {
+                    var af : AnimationFrame?
+                    af = animationFrames.first
+                    SetFrame(x: af!.frameX, y: af!.frameY)
+                    currentFrame = af
+                    //print("looped")
+                }
             }
             else
             {
@@ -96,4 +103,5 @@ class AnimationFrame
         frameX = FrameX;
         frameY = FrameY;
     }
+    
 }
