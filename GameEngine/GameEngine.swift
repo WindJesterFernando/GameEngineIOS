@@ -20,6 +20,8 @@ class GameEngine
     var playMode : PlayMode
     var titleMode : TitleMode
     
+    var currentTouches : Set<UITouch>
+    
     init(GameScene : GameScene)
     {
         gameScene = GameScene
@@ -29,6 +31,7 @@ class GameEngine
         currentMode = playMode
         currentMode.LoadContent()
         
+        currentTouches = []
         
         playMode.SetGameEngine(GameEngine: self)
         titleMode.SetGameEngine(GameEngine: self)
@@ -48,19 +51,37 @@ class GameEngine
         
     }
     
-    func TouchDown(atPoint : CGPoint){
-        currentMode.TouchDown(atPoint: atPoint)
+    func TouchDown(touches : Set<UITouch>){
+        
+        for t in touches {
+            currentTouches.insert(t)
+        }
+        
+        
+        currentMode.TouchDown(touches: currentTouches)
         //debugPrint("\(atPoint)")
     }
     
-    func TouchMove(atPoint : CGPoint){
-        currentMode.TouchMove(atPoint: atPoint)
+    func TouchMove(touches : Set<UITouch>){
+        
+        for t in touches {
+            currentTouches.insert(t)
+        }
+        
+        currentMode.TouchMove(touches: currentTouches)
         //debugPrint("\(atPoint)")
     }
     
-    func TouchUp(atPoint : CGPoint){
-        currentMode.TouchUp(atPoint: atPoint)
+    func TouchUp(touches : Set<UITouch>){
+        
+        for t in touches {
+            currentTouches.remove(t)
+        }
+        
+        currentMode.TouchUp(touches: currentTouches, removedTouches: touches)
         //debugPrint("\(atPoint)")
+        
+
     }
     
     func ChangeMode(modeID : Int)

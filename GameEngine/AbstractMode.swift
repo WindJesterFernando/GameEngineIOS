@@ -15,16 +15,11 @@ protocol AbstractMode : LoadAndUnload
 {
     func Update(delta : Double)
     func Draw()
-    func TouchDown(atPoint : CGPoint)
-    func TouchMove(atPoint : CGPoint)
-    func TouchUp(atPoint : CGPoint)
+    func TouchDown(touches : Set<UITouch>)
+    func TouchMove(touches : Set<UITouch>)
+    func TouchUp(touches : Set<UITouch>, removedTouches : Set<UITouch>)
 
 }
-
-
-
-
-
 
 
 //extension AbstractMode where Self: PlayMode {

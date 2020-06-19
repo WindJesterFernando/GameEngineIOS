@@ -44,8 +44,23 @@ class PlayMode : LoadAndUnload, AbstractMode
         
     }
     
-    func TouchDown(atPoint: CGPoint) {
+    func TouchDown(touches : Set<UITouch>) {
         
+        
+        print("----Start----")
+        
+        for touch in touches {
+            
+            print(touch.location(in: gameScene))
+                       
+        }
+        
+        print("--------")
+        
+        
+        var atPoint : CGPoint
+        
+        atPoint = touches.first!.location(in: gameScene)
         
         var distance : CGFloat
         
@@ -76,15 +91,45 @@ class PlayMode : LoadAndUnload, AbstractMode
         }
         
         avatar?.normalizedVelocity = CGPoint(x: difX / distance, y: difY / distance)
+        
+        CheckForButtonTouches()
     }
     
-    func TouchMove(atPoint: CGPoint) {
+    func TouchMove(touches : Set<UITouch>) {
+        
+        CheckForButtonTouches()
         
     }
     
-    func TouchUp(atPoint: CGPoint) {
+    func TouchUp(touches : Set<UITouch>, removedTouches : Set<UITouch>) {
         //print("hit")
         //gameEngine?.ChangeMode(modeID: ModeID.Title)
+        
+//        print("----Current Touches----")
+//        
+//        for touch in touches {
+//            
+//            print(touch.location(in: gameScene))
+//                       
+//        }
+//        
+//        print("--------")
+//        
+//        
+//        
+//        print("----Removed Touches----")
+//        
+//        for touch in removedTouches {
+//            
+//            print(touch.location(in: gameScene))
+//                       
+//        }
+//        
+//        print("--------")
+        
+        
+        CheckForButtonTouches()
+        
     }
     
     override func LoadContent() {
@@ -117,6 +162,21 @@ class PlayMode : LoadAndUnload, AbstractMode
 //              sprite.RemoveFromGameScene()
 //          }
 //      }
+    
+    func CheckForButtonTouches()
+    {
+        for touch in gameEngine!.currentTouches
+        {
+            if(touch.location(in: gameScene).x < 0)
+            {
+                print("Left Button Touch")
+            }
+            else if(touch.location(in: gameScene).x > 0)
+            {
+                print("Right Button Touch")
+            }
+        }
+    }
     
 }
 

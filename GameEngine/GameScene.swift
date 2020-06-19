@@ -91,21 +91,57 @@ class GameScene: SKScene {
 //    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        gameEngine?.TouchDown(atPoint: (touches.first?.location(in: self))!)
+        
+        
+//        print("----Start----")
+//        
+//        for touch in touches {
+//            
+//            print(touch.location(in: self))
+//                       
+//        }
+//        
+//        print("--------")
+        
+        gameEngine?.TouchDown(touches : touches)//atPoint: (touches.first?.location(in: self))!)
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        gameEngine?.TouchMove(atPoint: (touches.first?.location(in: self))!)
+        gameEngine?.TouchMove(touches : touches)//atPoint: (touches.first?.location(in: self))!)
+        
+//        print("----Moved----")
+//
+//        for touch in touches {
+//
+//            print(touch.location(in: self))
+//
+//        }
+//
+//        print("--------")
+        
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        gameEngine?.TouchUp(atPoint: (touches.first?.location(in: self))!)
+        gameEngine?.TouchUp(touches : touches)//atPoint: (touches.first?.location(in: self))!)
+        
+        
+        
+        
+//        print("----Finished----")
+//        
+//        for touch in touches {
+//            print(touch.location(in: self))
+//        }
+//        
+//        print("--------")
+        
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         //for t in touches { self.touchUp(atPoint: t.location(in: self)) }
         
-        gameEngine?.TouchUp(atPoint: (touches.first?.location(in: self))!)
+        gameEngine?.TouchUp(touches : touches)//atPoint: (touches.first?.location(in: self))!)
     }
 
     override func update(_ currentTime: TimeInterval) {

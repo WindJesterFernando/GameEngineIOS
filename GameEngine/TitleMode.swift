@@ -41,15 +41,15 @@ class TitleMode : LoadAndUnload, AbstractMode
         
     }
     
-    func TouchDown(atPoint: CGPoint) {
+    func TouchDown(touches : Set<UITouch>) {
         
     }
     
-    func TouchMove(atPoint: CGPoint) {
+    func TouchMove(touches : Set<UITouch>) {
         
     }
     
-    func TouchUp(atPoint: CGPoint) {
+    func TouchUp(touches : Set<UITouch>, removedTouches : Set<UITouch>) {
         gameEngine?.ChangeMode(modeID: ModeID.Play)
     }
     
