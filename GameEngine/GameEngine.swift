@@ -35,7 +35,6 @@ class GameEngine
         
         playMode.SetGameEngine(GameEngine: self)
         titleMode.SetGameEngine(GameEngine: self)
-       
         
     }
         

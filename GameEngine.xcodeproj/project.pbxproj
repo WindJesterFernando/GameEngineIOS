@@ -24,7 +24,9 @@
 		8816D50A2492CD7A008019AD /* TitleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D5092492CD7A008019AD /* TitleMode.swift */; };
 		8816D50F24940F25008019AD /* LoadAndUnload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D50D24940ECB008019AD /* LoadAndUnload.swift */; };
 		8816D511249417E0008019AD /* AnimatingSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D510249417E0008019AD /* AnimatingSprite.swift */; };
+		88196A84249D3D6C0097C2CA /* CGPointQualityOfLife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88196A83249D3D6C0097C2CA /* CGPointQualityOfLife.swift */; };
 		88A7743A249BEEA5003711C9 /* FlipBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A77439249BEEA5003711C9 /* FlipBook.swift */; };
+		88B1E22224A5276000104CAC /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B1E22124A5276000104CAC /* SavedDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,9 @@
 		8816D5092492CD7A008019AD /* TitleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMode.swift; sourceTree = "<group>"; };
 		8816D50D24940ECB008019AD /* LoadAndUnload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndUnload.swift; sourceTree = "<group>"; };
 		8816D510249417E0008019AD /* AnimatingSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingSprite.swift; sourceTree = "<group>"; };
+		88196A83249D3D6C0097C2CA /* CGPointQualityOfLife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointQualityOfLife.swift; sourceTree = "<group>"; };
 		88A77439249BEEA5003711C9 /* FlipBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBook.swift; sourceTree = "<group>"; };
+		88B1E22124A5276000104CAC /* SavedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +90,14 @@
 				8816D5052492CB0A008019AD /* AbstractMode.swift */,
 				8816D50D24940ECB008019AD /* LoadAndUnload.swift */,
 				8816D5092492CD7A008019AD /* TitleMode.swift */,
-				8816D5072492CC4E008019AD /* PlayMode.swift */,
 				8816D5032492C843008019AD /* ContentLoader.swift */,
 				8816D5012492BAB2008019AD /* Sprite.swift */,
 				8816D510249417E0008019AD /* AnimatingSprite.swift */,
 				880C9B5E249959D800940C8F /* StateAnimatingSprite.swift */,
 				88A77439249BEEA5003711C9 /* FlipBook.swift */,
+				88196A83249D3D6C0097C2CA /* CGPointQualityOfLife.swift */,
+				8816D5072492CC4E008019AD /* PlayMode.swift */,
+				88B1E22124A5276000104CAC /* SavedDataManager.swift */,
 			);
 			path = GameEngine;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8816D50F24940F25008019AD /* LoadAndUnload.swift in Sources */,
+				88196A84249D3D6C0097C2CA /* CGPointQualityOfLife.swift in Sources */,
 				8816D50A2492CD7A008019AD /* TitleMode.swift in Sources */,
 				8816D5022492BAB2008019AD /* Sprite.swift in Sources */,
 				8816D4ED2492A132008019AD /* GameScene.swift in Sources */,
@@ -196,6 +203,7 @@
 				8816D5042492C843008019AD /* ContentLoader.swift in Sources */,
 				8816D5062492CB0A008019AD /* AbstractMode.swift in Sources */,
 				8816D4FF2492AC30008019AD /* GameEngine.swift in Sources */,
+				88B1E22224A5276000104CAC /* SavedDataManager.swift in Sources */,
 				88A7743A249BEEA5003711C9 /* FlipBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
