@@ -33,6 +33,7 @@ class PlayMode : LoadAndUnload, AbstractMode
         //saveData = SaveData()
         
        
+
         
     }
     
@@ -56,6 +57,7 @@ class PlayMode : LoadAndUnload, AbstractMode
     
     func TouchDown(touches : Set<UITouch>) {
         
+        SavedDataManager.numberOfClicks += 1
         
         print("----Start----")
         
